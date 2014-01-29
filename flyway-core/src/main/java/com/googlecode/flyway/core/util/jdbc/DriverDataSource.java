@@ -104,6 +104,8 @@ public class DriverDataSource implements DataSource {
                 driverClass = "net.sourceforge.jtds.jdbc.Driver";
             } else if (url.startsWith("jdbc:sqlserver:")) {
                 driverClass = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
+            } else if (url.startsWith("jdbc:sybase:Tds:")) {
+            	driverClass = "com.sybase.jdbc4.jdbc.SybDriver";
             } else {
                 throw new FlywayException("Unable to autodetect Jdbc driver for url: " + url);
             }
